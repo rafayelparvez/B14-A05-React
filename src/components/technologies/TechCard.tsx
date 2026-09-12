@@ -73,30 +73,30 @@ const TechCard = ({
             </div>
 
             {/* Button */}
-           <button
-  type="button"
-  onClick={() => {
-    const alreadySelected = selectedStack.some(
-      (item) => item.id === technology.id,
-    );
+            <button
+              type="button"
+              onClick={() => {
+                const alreadySelected = selectedStack.some(
+                  (item) => item.id === technology.id,
+                );
 
-    if (alreadySelected) {
-      toast.warning(`${technology.name} is already in your stack!`);
-      return;
-    }
+                if (alreadySelected) {
+                  toast.warning(`${technology.name} is already in your stack!`);
+                  return;
+                }
 
-    setSelectedStack((current) => [...current, technology]);
+                setSelectedStack((current) => [...current, technology]);
 
-    toast.success(`${technology.name} added to your stack!`);
-  }}
-  className={`w-full rounded-xl px-4 py-2.5 text-sm font-medium transition-colors ${
-    isSelected
-      ? "bg-[#EEF2FF] text-[#4F46E5]"
-      : "bg-[#4F46E5] text-white hover:bg-[#4338CA]"
-  }`}
->
-  {isSelected ? "✓ Added to Stack" : "Add to stack"}
-</button>
+                toast.success(`${technology.name} added to your stack!`);
+              }}
+              className={`w-full rounded-xl px-4 py-2.5 text-sm font-medium transition-colors ${
+                isSelected
+                  ? "bg-[#EEF2FF] text-[#4F46E5]"
+                  : "bg-[#4F46E5] text-white hover:bg-[#4338CA]"
+              }`}
+            >
+              {isSelected ? "✓ Added to Stack" : "Add to stack"}
+            </button>
           </div>
         );
       })}
