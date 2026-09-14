@@ -19,7 +19,7 @@ function App() {
     <>
       <Nav />
       <Banner />
-      <Suspense fallback={<h2>Loading.......</h2>}>
+      <Suspense fallback={<div className="flex items-center justify-center p-10"><h2>Loading.......</h2></div>}>
         <Technologies technologiesPromise={technologiesPromise} />
       </Suspense>
       <Footer />
